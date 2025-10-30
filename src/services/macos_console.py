@@ -35,13 +35,9 @@ class MacOSConsoleService(OSConsoleServiceBase):
         if path.is_dir(follow_symlinks=True):
             self._logger.error(f"You entered {filename} is not a file")
             raise IsADirectoryError(f"You entered {filename} is not a file")
-        try:
-            self._logger.info(f"Reading file {filename} in mode {mode}")
-            match mode:
-                case FileReadMode.string:
-                    return path.read_text(encoding="utf-8")
-                case FileReadMode.bytes:
-                    return path.read_bytes()
-        except OSError as e:
-            self._logger.exception(f"Error reading {filename}: {e}")
-            raise
+        self._logger.info(f"Reading file {filename} in mode {mode}")
+        match mode:
+            case FileReadMode.string:
+                return path.read_text(encoding="utf-8")
+            case FileReadMode.bytes:
+                return path.read_bytes()

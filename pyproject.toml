@@ -3,7 +3,35 @@ name = "console-app-with-logging"
 version = "0.1.0"
 description = "Add your description here"
 requires-python = ">=3.13"
-dependencies = [
+dependencies = []
+
+[tool.uv]
+dev-dependencies=[
+    "pyfakefs>=5.10.1",
+    "pytest-cov>=7.0.0",
+    "pytest-mock>=3.15.1",
     "ruff>=0.14.2",
     "typer>=0.20.0",
 ]
+
+[tool.pytest.ini_options]
+addopts = [
+  "--cov=src",
+  "--cov-branch",
+  "--cov-report=term-missing",
+  "-q",
+]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+
+[tool.coverage.run]
+source = ["src"]
+branch = true
+parallel = true
+omit = ["*/__init__.py", "*/main.py", "*/common/*", "*/enums/*", "*/dependencies/*"]
+
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 10
