@@ -1,0 +1,32 @@
+[2025-11-06 19:10:21] INFO: ShellManager инициализирован
+[2025-11-06 19:10:21] INFO: Запуск Mini Shell
+[2025-11-06 19:10:27] INFO: ls  OK
+[2025-11-06 19:10:29] INFO: ls -l OK
+[2025-11-06 19:10:41] INFO: cd .. OK
+[2025-11-06 19:10:50] INFO: cd ~ OK
+[2025-11-06 19:10:58] ERROR: cd Программирование на Python ERROR: Путь C:\Users\kiril\Программирование на Python не существует
+[2025-11-06 19:11:11] INFO: ls  OK
+[2025-11-06 19:11:30] INFO: ls -l Music OK
+[2025-11-06 19:13:11] ERROR: cd not_exists ERROR: Путь C:\Users\kiril\not_exists не существует
+[2025-11-06 19:13:31] INFO: cd C:\Users\kiril OK
+[2025-11-06 19:13:42] INFO: cd Downloads OK
+[2025-11-06 19:13:46] INFO: ls  OK
+[2025-11-06 19:14:25] INFO: cat Расписание приёма лекарств.docx OK
+[2025-11-06 19:15:06] INFO: cd C:\Users\kiril OK
+[2025-11-06 19:15:07] INFO: ls  OK
+[2025-11-06 19:15:12] ERROR: cat 'Links' ERROR: Объект C:\Users\kiril\Links не является файлом
+[2025-11-06 19:15:47] INFO: cd Music OK
+[2025-11-06 19:16:19] INFO: ls  OK
+[2025-11-06 19:16:53] INFO: cp FRIENDLY THUG 52 NGG - Maestro.mp3 ../Downloads  OK
+[2025-11-06 19:17:02] INFO: cd ../Downloads OK
+[2025-11-06 19:17:29] ERROR: grep *.mp3 ../Downloads ERROR: ошибка в регулярном выражении - nothing to repeat at position 0
+[2025-11-06 19:21:54] INFO: ShellManager инициализирован
+[2025-11-06 19:21:54] INFO: Запуск Mini Shell
+[2025-11-06 19:22:15] INFO: ls  OK
+[2025-11-06 19:22:20] INFO: cd .. OK
+[2025-11-06 19:22:22] INFO: ls  OK
+[2025-11-06 19:22:36] INFO: cd python-lab-1-M1---2- OK
+[2025-11-06 19:22:38] INFO: ls  OK
+[2025-11-06 19:22:45] ERROR: rm tests ERROR: попытка удалить каталог без -r
+[2025-11-06 19:22:53] INFO: rm -r tests CANCELLED by user
+[2025-11-06 19:22:57] INFO: rm -r tests OK
