@@ -30,3 +30,20 @@
 [2025-11-06 19:22:45] ERROR: rm tests ERROR: попытка удалить каталог без -r
 [2025-11-06 19:22:53] INFO: rm -r tests CANCELLED by user
 [2025-11-06 19:22:57] INFO: rm -r tests OK
+[2025-11-06 19:27:50] INFO: ls  OK
+[2025-11-06 19:28:31] INFO: zip data ../python-lab-1-M1---2-/data_archive OK
+[2025-11-06 19:28:34] INFO: ls  OK
+[2025-11-06 19:29:27] ERROR: unzip data_archive.zip  ERROR: ZipFile.extractall() got an unexpected keyword argument 'filter'
+[2025-11-06 19:29:50] ERROR: unzip data_archive.zip  ERROR: ZipFile.extractall() got an unexpected keyword argument 'filter'
+[2025-11-06 19:30:53] ERROR: tar data ../python-lab-1-M1---2-/tar_archive_data/data_archive ERROR: [Errno 2] No such file or directory: 'C:\\Users\\kiril\\OneDrive\\Рабочий стол\\Study\\University\\1th Grade\\Программирование на Python\\python-lab-1-M1---2-\\tar_archive_data\\data_archive'
+[2025-11-06 19:31:22] INFO: tar data ../python-lab-1-M1---2-/tar_archive_data/ OK
+[2025-11-06 19:31:29] INFO: ls  OK
+[2025-11-06 19:33:19] INFO: untar tar_archive_data  OK
+[2025-11-06 19:34:55] WARNING: Неизвестная команда: python
+[2025-11-06 19:35:01] INFO: Выход из оболочки
+[2025-11-06 19:35:01] INFO: Работа оболочки завершена
+[2025-11-06 19:35:27] INFO: ShellManager инициализирован
+[2025-11-06 19:35:27] INFO: Запуск Mini Shell
+[2025-11-06 19:35:37] INFO: cd ../python-lab-1-M1---2- OK
+[2025-11-06 19:35:39] INFO: ls  OK
+[2025-11-06 19:36:08] INFO: unzip data_archive.zip  OK

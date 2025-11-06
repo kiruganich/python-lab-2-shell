@@ -73,7 +73,7 @@ class ArchiveCommands:
                 return False
             
             with zipfile.ZipFile(archive_path, 'r') as zf:
-                zf.extractall(extract_path, filter='data')
+                zf.extractall(extract_path)
             
             print(f"Архив распакован в: {extract_path}")
             logger.info(f"unzip {archive} {extract_path if len(args) > 1 else ''} OK")
