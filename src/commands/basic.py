@@ -10,7 +10,7 @@ from ..logger import setup_logger
 
 logger = setup_logger()
 
-class BasicCommands:
+class   BasicCommands:
     
     def __init__(self, history_manager=None, undo_manager=None):
         self.history_manager = history_manager
@@ -263,6 +263,27 @@ class BasicCommands:
             
             # Удаление файла (без подтверждения)
             if target_path.is_file():
+                # Копируем в корзину для возможности отмены
+                trash_dir = Path("data") / ".trash"
+                trash_dir.mkdir(parents=True, exist_ok=True)
+                backup_path = trash_dir / target_path.name
+                
+                counter = 1
+                while backup_path.exists():
+                    backup_path = trash_dir / f"{target_path.name}_{counter}"
+                    counter += 1
+                
+                shutil.copy2(target_path, backup_path)
+                
+                # Записываем операцию
+                if self.undo_manager:
+                    self.undo_manager.record_operation(
+                        'rm', 
+                        str(backup_path), 
+                        str(target_path),
+                        cmd_index=len(self.history_manager.history) if self.history_manager else None
+                    )
+                
                 target_path.unlink()
                 print(f"Файл удалён: {target_path}")
                 logger.info(f"rm {target} OK")
@@ -292,9 +313,10 @@ class BasicCommands:
                     backup_path = trash_dir / f"{target_path.name}_{counter}"
                     counter += 1
                 
+                # 🔴 СНАЧАЛА копируем в корзину
                 shutil.copytree(target_path, backup_path)
-                shutil.rmtree(target_path)
                 
+                # ✅ ПОТОМ записываем операцию
                 if self.undo_manager:
                     self.undo_manager.record_operation(
                         'rm', 
@@ -302,6 +324,9 @@ class BasicCommands:
                         str(target_path),
                         cmd_index=len(self.history_manager.history) if self.history_manager else None
                     )
+                
+                # И только потом удаляем оригинал
+                shutil.rmtree(target_path)
                 
                 print(f"Директория удалена: {target_path}")
                 logger.info(f"rm -r {target} OK")

@@ -6,7 +6,10 @@ logger = setup_logger()
 
 class HistoryManager:
     def __init__(self, history_file=None):
-        self.history_file = history_file or Path("data") / ".history"
+        if history_file is None:
+            self.history_file = Path("data") / ".history"
+        else:
+            self.history_file = Path(history_file)
         self.history = []
         self.load_history()
     
