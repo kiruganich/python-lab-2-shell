@@ -114,5 +114,6 @@ MiniShell > exit
 ## Зависимости
 
 ```
+Python 3.8+
 pytest>=7.0.0
 ```
